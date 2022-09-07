@@ -112,7 +112,7 @@ public class PatrollingEnemy : MonoBehaviour
             else
                 targetPos = currentPos + 1;
 
-            //transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
+            transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
         }   
         else
         {
@@ -122,11 +122,13 @@ public class PatrollingEnemy : MonoBehaviour
                 {
                     targetPos = currentPos + 1;
                     goBackwards = !goBackwards;
+                    transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
                 }
                 else
+                {
                     targetPos = currentPos - 1;
-
-                //transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
+                    transform.eulerAngles = new Vector3(0, 0, rotations[currentPos] + 180);
+                }
             }
             else
             {
@@ -134,11 +136,13 @@ public class PatrollingEnemy : MonoBehaviour
                 {
                     targetPos = currentPos - 1;
                     goBackwards = !goBackwards;
+                    transform.eulerAngles = new Vector3(0, 0, rotations[currentPos] + 180);
                 }
                 else
+                {
                     targetPos = currentPos + 1;
-
-                //transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
+                    transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
+                }
             }
         }
         
@@ -149,7 +153,7 @@ public class PatrollingEnemy : MonoBehaviour
         moveDir = targetDirection.normalized;
 
         //transform.rotation = Quaternion.LookRotation(moveDir);
-        transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
+        //transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
         //transform.LookAt(patrolPositions[targetPos], Vector3.forward);
     }
 

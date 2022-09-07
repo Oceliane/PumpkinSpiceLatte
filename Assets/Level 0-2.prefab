@@ -1033,7 +1033,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   delayBetweenMovements: 0.02
-  loops: 1
+  loops: 0
   randomStartingPos: 1
   startingPos: 0
 --- !u!61 &579226304
