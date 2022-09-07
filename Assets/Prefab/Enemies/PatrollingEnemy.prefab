@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5069339471723973144}
   - component: {fileID: 5069339471723973146}
   - component: {fileID: 5069339471723973125}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: detectionArea1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 5069339472159136593}
   - component: {fileID: 5069339472159136595}
   - component: {fileID: 5069339472159136594}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: detectionArea3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 5069339472803940626}
   - component: {fileID: 5069339472803940636}
   - component: {fileID: 5069339472803940639}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: detectionArea2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 6019202210377265026}
   - component: {fileID: 6019202210377265036}
   - component: {fileID: 5069339471594597500}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: EnemySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

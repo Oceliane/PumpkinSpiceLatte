@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7949746141681984248}
   - component: {fileID: 7949746141681984251}
   - component: {fileID: 7949746141681984249}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: EnemySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 7949746141796690897}
   - component: {fileID: 7949746141796690899}
   - component: {fileID: 7949746141796690898}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: detectionArea1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 7949746141820263126}
   - component: {fileID: 7949746141820263120}
   - component: {fileID: 7949746141820263127}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: detectionArea1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +352,7 @@ GameObject:
   - component: {fileID: 7949746142109973035}
   - component: {fileID: 7949746142109973205}
   - component: {fileID: 7949746142109973204}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: detectionArea1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 7949746142256572284}
   - component: {fileID: 7949746142256572286}
   - component: {fileID: 7949746142256572285}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: detectionArea1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 7949746142510116360}
   - component: {fileID: 7949746142510116362}
   - component: {fileID: 7949746142510116361}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: detectionArea1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 7949746142594200918}
   - component: {fileID: 7949746142594200912}
   - component: {fileID: 7949746142594200919}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: detectionArea1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 7949746142724758786}
   - component: {fileID: 7949746142724758796}
   - component: {fileID: 7949746142724758787}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: detectionArea1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 7949746143376458466}
   - component: {fileID: 7949746143376458476}
   - component: {fileID: 7949746143376458467}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: detectionArea1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
