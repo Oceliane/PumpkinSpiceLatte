@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MovementController : MonoBehaviour
 {
@@ -14,12 +15,18 @@ public class MovementController : MonoBehaviour
     private readonly float pixelDisplacement_y = 0.05f;
     private float movementTimer = 0f;
 
+    [SerializeField] private float helmetTimer;
+    private float helmetTimerIntern;
+    private bool isHelmetOnHead;
+
     private BoxCollider2D collider_right;
     private BoxCollider2D collider_left;
     private BoxCollider2D collider_top;
     private BoxCollider2D collider_down;
 
     private ContactFilter2D contactFilter;
+
+    private PlayerInput playerInput;
 
     private void Awake()
     {
@@ -40,9 +47,17 @@ public class MovementController : MonoBehaviour
         collider_top.offset = new Vector2(0f, boxOffset);
     }
 
+    private void Start()
+    {
+        playerInput = GetComponent<PlayerInput>();
+    }
+
     private void Update()
     {
         movementTimer -= movementTimer <= 0 ? 0 : Time.deltaTime;
+        if (isHelmetOnHead)
+            helmetTimerIntern -= Time.deltaTime;
+
         List<Collider2D> wallsHit = new ();
         contactFilter.SetLayerMask(LayerMask.GetMask("Wall"));
         contactFilter.useLayerMask = true;
@@ -89,6 +104,18 @@ public class MovementController : MonoBehaviour
                 transform.position = new Vector3(movement_x, movement_y, 0);
                 movementTimer = delayBetweenMovement;
             }
+        }
+    }
+
+    private void ActionHelmet()
+    {
+        if (isHelmetOnHead)
+        {
+
+        }
+        else
+        {
+
         }
     }
 }
