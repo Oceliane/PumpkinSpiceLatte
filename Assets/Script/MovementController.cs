@@ -51,7 +51,7 @@ public class MovementController : MonoBehaviour
         collider_top.size = new Vector2(colliderLength, 0.05f);
         collider_top.offset = new Vector2(0f, boxOffset);
 
-        playerControls = new PlayerInputAction();
+        playerControls = InputManager.inputActions;
         playerControls.Player.Enable();
         playerControls.Player.Helmet.started += Action_Helmet;
     }
