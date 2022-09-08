@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba6b6d51d15e814c898c289fa3496b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerIsHidden: 0
   patrolPositions:
   - {fileID: 6019202209707144952}
   - {fileID: 6019202209462818485}
@@ -175,6 +176,7 @@ GameObject:
   - component: {fileID: 5069339471723973144}
   - component: {fileID: 5069339471723973146}
   - component: {fileID: 5069339471723973125}
+  - component: {fileID: 6731668448565839232}
   m_Layer: 7
   m_Name: detectionArea1
   m_TagString: Untagged
@@ -275,6 +277,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &6731668448565839232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069339471723973145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ec26cc778660b4ca3038fe1974ed17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childArea: {fileID: 0}
 --- !u!1 &5069339472159136598
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +301,7 @@ GameObject:
   - component: {fileID: 5069339472159136593}
   - component: {fileID: 5069339472159136595}
   - component: {fileID: 5069339472159136594}
+  - component: {fileID: 1445483374270738620}
   m_Layer: 7
   m_Name: detectionArea3
   m_TagString: Untagged
@@ -386,6 +402,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &1445483374270738620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069339472159136598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ec26cc778660b4ca3038fe1974ed17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childArea: {fileID: 0}
 --- !u!1 &5069339472803940627
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +426,7 @@ GameObject:
   - component: {fileID: 5069339472803940626}
   - component: {fileID: 5069339472803940636}
   - component: {fileID: 5069339472803940639}
+  - component: {fileID: 5706768291870172357}
   m_Layer: 7
   m_Name: detectionArea2
   m_TagString: Untagged
@@ -497,6 +527,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &5706768291870172357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069339472803940627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ec26cc778660b4ca3038fe1974ed17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childArea: {fileID: 0}
 --- !u!1 &6019202209462818484
 GameObject:
   m_ObjectHideFlags: 0

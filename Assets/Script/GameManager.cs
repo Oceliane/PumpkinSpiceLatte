@@ -9,4 +9,9 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 50;
         Debug.Log(Application.targetFrameRate + " fps");
     }
+
+    public void PlayerHidden()
+    {
+
+    }
 }

@@ -101,6 +101,11 @@ public class RoomsManager : MonoBehaviour
             RoomsInstance[(int)tempCoords.x].RoomsRow[(int)tempCoords.y] = currentRoom;
         }
     }
+
+    public void PlayerStatusChanged(bool playerIsHidden)
+    {
+        currentRoom.GetComponent<Room>().RoomEnemyChange(playerIsHidden);
+    }
 }
 
 

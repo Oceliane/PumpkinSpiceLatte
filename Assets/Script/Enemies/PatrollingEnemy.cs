@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrollingEnemy : MonoBehaviour
+public class PatrollingEnemy : Enemy
 {
     [SerializeField] Transform[] patrolPositions;
     [SerializeField] GameObject[] detectionAreas;
@@ -41,8 +41,6 @@ public class PatrollingEnemy : MonoBehaviour
 
     void Update()
     {
-        EnemyDetection();
-
         if (delay > 0)
         {
             delay -= Time.deltaTime;
@@ -62,6 +60,8 @@ public class PatrollingEnemy : MonoBehaviour
             
             delay = delayBetweenMovements;
         }
+
+        EnemyDetection();
     }
 
     void EnemyDetection()
@@ -70,7 +70,7 @@ public class PatrollingEnemy : MonoBehaviour
         //Debug.DrawRay(transform.position, objectToRotate.transform.TransformDirection(Vector3.right) * 2.4f, Color.red);
 
 
-        if (hit)
+        if (hit && !playerIsHidden)
         {
             //Debug.Log(hit.collider.name);
             if (hit.distance < 1.2)
@@ -92,7 +92,7 @@ public class PatrollingEnemy : MonoBehaviour
                 detectionAreas[2].SetActive(true);
             }
         }
-        else if (!detectionAreas[2].activeInHierarchy)
+        else if (!detectionAreas[2].activeInHierarchy && !playerIsHidden)
         {
             detectionAreas[0].SetActive(true);
             detectionAreas[1].SetActive(true);
@@ -165,6 +165,28 @@ public class PatrollingEnemy : MonoBehaviour
         {
             item.transform.localEulerAngles = objectToRotate.transform.eulerAngles;
         }
+    }
+
+    public override void BlindEnemy()
+    {
+        playerIsHidden = true;
+
+        foreach (var item in detectionAreas)
+        {
+            item.SetActive(false);
+        }
+    }
+
+    public override void EnemyCanSee()
+    {
+        playerIsHidden = false;
+
+        foreach (var item in detectionAreas)
+        {
+            item.SetActive(true);
+        }
+
+        EnemyDetection();
     }
 
     private void OnDrawGizmos()

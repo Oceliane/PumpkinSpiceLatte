@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotatingEnemy : MonoBehaviour
+public class RotatingEnemy : Enemy
 {
     [SerializeField] GameObject[] detectionAreas;
     [SerializeField] Animator gargouilleAnim;
@@ -108,7 +108,7 @@ public class RotatingEnemy : MonoBehaviour
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * 2.4f, Color.red);
 
 
-        if (hit)
+        if (hit && !playerIsHidden)
         {
             Debug.Log(hit.collider.name);
             if (hit.distance < 0.8)
@@ -130,11 +130,33 @@ public class RotatingEnemy : MonoBehaviour
                 detectionAreas[2].SetActive(true);
             }
         }
-        else if (!detectionAreas[2].activeInHierarchy)
+        else if (!detectionAreas[2].activeInHierarchy && !playerIsHidden)
         {
             detectionAreas[0].SetActive(true);
             detectionAreas[1].SetActive(true);
             detectionAreas[2].SetActive(true);
         }
+    }
+
+    public override void BlindEnemy()
+    {
+        playerIsHidden = true;
+
+        foreach (var item in detectionAreas)
+        {
+            item.SetActive(false);
+        }
+    }
+
+    public override void EnemyCanSee()
+    {
+        playerIsHidden = false;
+
+        foreach (var item in detectionAreas)
+        {
+            item.SetActive(true);
+        }
+
+        EnemyDetection();
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    [SerializeField] Animator playerAnimator;
     [SerializeField] private float delayBetweenMovement;
     [SerializeField] private float boxOffset;
     private float colliderLength = 0.65f;  // 0.976 0.535
