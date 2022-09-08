@@ -30,5 +30,10 @@ public class PlayerPumpkin : MonoBehaviour
                 refRoomsManager.PlayerStatusChanged(isHidden);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            //refMouvementController.lastDir
+        }
     }
 }

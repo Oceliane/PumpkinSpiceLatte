@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e78ca4b62aaf374f83d69b77fc2d35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 2412504388574314161}
   delayBetweenMovement: 0.005
   boxOffset: 0.4
 --- !u!61 &2412504388336032826
@@ -88,6 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 2412504388574314161}
+  refMouvementController: {fileID: 2412504388336032825}
   refRoomsManager: {fileID: 0}
   isHidden: 0
 --- !u!1 &2412504388574314174
