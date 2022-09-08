@@ -7,38 +7,57 @@ using TMPro;
 
 public class RebindingScript : MonoBehaviour
 {
-    [SerializeField] private InputActionReference InputActionReference;
+    [SerializeField]
+    private InputActionReference inputActionReference; //this is on the SO
 
-    [SerializeField] private bool excludeMouse = true;
+    [SerializeField]
+    private bool excludeMouse = true;
     [Range(0, 10)]
-    [SerializeField] private int selectedBinding;
-    [SerializeField] private InputBinding.DisplayStringOptions displayStringOptions;
+    [SerializeField]
+    private int selectedBinding;
+    [SerializeField]
+    private InputBinding.DisplayStringOptions displayStringOptions;
     [Header("Binding Info - DO NOT EDIT")]
-    [SerializeField] 
+    [SerializeField]
     private InputBinding inputBinding;
     private int bindingIndex;
 
     private string actionName;
 
-    [Header("UI fields")]
-    [SerializeField] private Text actionText;
-    [SerializeField] private Button rebindButton;
-    [SerializeField] private Text rebindText;
+    [Header("UI Fields")]
+    [SerializeField]
+    private TextMeshProUGUI actionText;
+    [SerializeField]
+    private Button rebindButton;
+    [SerializeField]
+    private TextMeshProUGUI rebindText;
+    [SerializeField]
+    private Button resetButton;
 
     private void OnEnable()
     {
         rebindButton.onClick.AddListener(() => DoRebind());
 
-        if(InputActionReference != null)
+        if (inputActionReference != null)
         {
+            InputManager.LoadBindingOverride(actionName);
             GetBindingInfo();
             UpdateUI();
         }
+
+        InputManager.rebindComplete += UpdateUI;
+        InputManager.rebindCanceled += UpdateUI;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.rebindComplete -= UpdateUI;
+        InputManager.rebindCanceled -= UpdateUI;
     }
 
     private void OnValidate()
     {
-        if (InputActionReference != null)
+        if (inputActionReference == null)
             return;
 
         GetBindingInfo();
@@ -47,12 +66,12 @@ public class RebindingScript : MonoBehaviour
 
     private void GetBindingInfo()
     {
-        if(InputActionReference.action != null)
-            actionName = InputActionReference.action.name;
+        if (inputActionReference.action != null)
+            actionName = inputActionReference.action.name;
 
-        if(InputActionReference.action.bindings.Count > selectedBinding)
+        if (inputActionReference.action.bindings.Count > selectedBinding)
         {
-            inputBinding = InputActionReference.action.bindings[selectedBinding];
+            inputBinding = inputActionReference.action.bindings[selectedBinding];
             bindingIndex = selectedBinding;
         }
     }
@@ -60,21 +79,21 @@ public class RebindingScript : MonoBehaviour
     private void UpdateUI()
     {
         if (actionText != null)
-            actionText = rebindText;
+            actionText.text = actionName;
 
-        if(rebindText != null)
+        if (rebindText != null)
         {
             if (Application.isPlaying)
             {
-
+                rebindText.text = InputManager.GetBindingName(actionName, bindingIndex);
             }
             else
-                rebindText.text = InputActionReference.action.GetBindingDisplayString(bindingIndex);
+                rebindText.text = inputActionReference.action.GetBindingDisplayString(bindingIndex);
         }
     }
 
     private void DoRebind()
     {
-        InputManager.StartRebind(actionName, bindingIndex, rebindText);
+        InputManager.StartRebind(actionName, bindingIndex, rebindText, excludeMouse);
     }
 }
