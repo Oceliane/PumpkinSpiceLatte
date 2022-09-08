@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 496355972}
   - component: {fileID: 496355971}
   m_Layer: 0
-  m_Name: Gargouille
+  m_Name: GargouilleSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3256554814138506509}
   - component: {fileID: 2150781923764012561}
   m_Layer: 7
-  m_Name: EnemySprite
+  m_Name: Gargouille
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

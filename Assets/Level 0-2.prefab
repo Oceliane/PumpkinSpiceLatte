@@ -104,14 +104,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1572154159411194882}
     m_Modifications:
-    - target: {fileID: 496355970, guid: 3b7e8a11e0973fd419b0e48a29ccdc08, type: 3}
-      propertyPath: m_Name
-      value: GargouilleSprite
-      objectReference: {fileID: 0}
-    - target: {fileID: 1105732785698577471, guid: 3b7e8a11e0973fd419b0e48a29ccdc08, type: 3}
-      propertyPath: m_Name
-      value: Gargouille
-      objectReference: {fileID: 0}
     - target: {fileID: 1413567137488595931, guid: 3b7e8a11e0973fd419b0e48a29ccdc08, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -174,38 +166,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1572154159411194882}
     m_Modifications:
-    - target: {fileID: 1759443157, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5500002
-      objectReference: {fileID: 0}
-    - target: {fileID: 6019202209462818485, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6019202209462818485, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5500002
-      objectReference: {fileID: 0}
-    - target: {fileID: 6019202209639241237, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6019202209639241237, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 6019202209707144952, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6019202209707144952, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5500002
-      objectReference: {fileID: 0}
-    - target: {fileID: 6019202209893078085, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.05
-      objectReference: {fileID: 0}
     - target: {fileID: 6019202210210769854, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
       propertyPath: m_Name
       value: PatrollingEnemy1
@@ -252,10 +212,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6019202210210769855, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6140799812803379117, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
-      propertyPath: loops
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
