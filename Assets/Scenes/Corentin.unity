@@ -540,9 +540,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e78ca4b62aaf374f83d69b77fc2d35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHelmetOnHead: 0
   delayBetweenMovement: 0.005
   boxOffset: 0.535
+  colliderLength: 0.976
+  pixelDisplacement_x: 0.05
+  pixelDisplacement_y: 0.05
   helmetTimer: 0
+  helmetCooldown: 2
+  helmetRecoveryRatio: 1
 --- !u!1 &1459108791
 GameObject:
   m_ObjectHideFlags: 0

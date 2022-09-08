@@ -1,26 +1,30 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MovementController : MonoBehaviour
 {
     public PlayerInputAction playerControls;
+    [HideInInspector] public bool isHelmetOnHead;
 
-    [SerializeField] private float delayBetweenMovement;
+    [Header("Collider settings")]
     [SerializeField] private float boxOffset;
     [SerializeField] private float colliderLength = 0.976f;
+
+    [Header("Movement settings")]
     [SerializeField] private float pixelDisplacement_x = 0.05f;
     [SerializeField] private float pixelDisplacement_y = 0.05f;
+    [SerializeField] private float delayBetweenMovement;
+
+    [Header("Helmet settings")]
     [SerializeField] private float helmetTimer;
+    [SerializeField] private float helmetCooldown;
+    [SerializeField] private float helmetRecoveryRatio;
     
     private float movementTimer = 0f;
 
     private float helmetTimerIntern;
-    private bool isHelmetOnHead;
+    private float helmetDelayTimer;
 
     private BoxCollider2D collider_right;
     private BoxCollider2D collider_left;
@@ -49,6 +53,7 @@ public class MovementController : MonoBehaviour
 
         playerControls = new PlayerInputAction();
         playerControls.Player.Enable();
+        playerControls.Player.Helmet.started += Action_Helmet;
     }
 
 
@@ -62,7 +67,10 @@ public class MovementController : MonoBehaviour
         //Timer handling
         movementTimer -= movementTimer <= 0 ? 0 : Time.deltaTime;
         if (isHelmetOnHead)
-            helmetTimerIntern -= Time.deltaTime;
+            helmetTimerIntern -= helmetTimerIntern <= 0 ? 0 : Time.deltaTime;
+        else
+            helmetTimerIntern += helmetTimerIntern >= helmetTimer ? 0 : Time.deltaTime * helmetRecoveryRatio;
+        helmetDelayTimer -= helmetDelayTimer <= 0 ? 0 : Time.deltaTime;
 
         //Filtering setup for colliders
         List<Collider2D> wallsHit = new ();
@@ -117,15 +125,21 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    private void ActionHelmet()
+    private void Action_Helmet(InputAction.CallbackContext context)
     {
-        if (isHelmetOnHead)
+        if(helmetDelayTimer <= 0)
         {
-            
-        }
-        else
-        {
-
+            if (isHelmetOnHead)
+            {
+                isHelmetOnHead = false;
+                Debug.Log("Helmet off");
+            }
+            else
+            {
+                isHelmetOnHead = true;
+                Debug.Log("Helmet on");
+            }
+            helmetDelayTimer = helmetCooldown;
         }
     }
 }
