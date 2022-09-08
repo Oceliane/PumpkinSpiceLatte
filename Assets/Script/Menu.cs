@@ -10,6 +10,11 @@ public class Menu : MonoBehaviour
     GameObject Main;
     GameObject LastMenu;
     GameObject CurrentMenu;
+
+    [SerializeField]
+    GameObject Title;
+    [SerializeField]
+    Animator TransitionAnim;
     private void Awake()
     {
         CurrentMenu = Main;
@@ -19,8 +24,12 @@ public class Menu : MonoBehaviour
     public void GoPlay()
     {
         Time.timeScale = 1;
-        RoomsManager.instance.StartGame();
+        CurrentMenu.SetActive(false);
+        Title.SetActive(false);
+        TransitionAnim.Play("Transition");
     }
+
+
 
     public void Quit()
     {

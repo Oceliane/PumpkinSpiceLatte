@@ -24,21 +24,21 @@ public class MovementController : MonoBehaviour
 
     private void Awake()
     {
-        collider_right = gameObject.AddComponent<BoxCollider2D>();
-        collider_right.size = new Vector2(0.05f, colliderLength);
-        collider_right.offset = new Vector2(boxOffset, 0f);
+        //collider_right = gameObject.AddComponent<BoxCollider2D>();
+        //collider_right.size = new Vector2(0.05f, colliderLength);
+        //collider_right.offset = new Vector2(boxOffset, 0f);
 
-        collider_down = gameObject.AddComponent<BoxCollider2D>();
-        collider_down.size = new Vector2(colliderLength, 0.05f);
-        collider_down.offset = new Vector2(0f, -boxOffset);
+        //collider_down = gameObject.AddComponent<BoxCollider2D>();
+        //collider_down.size = new Vector2(colliderLength, 0.05f);
+        //collider_down.offset = new Vector2(0f, -boxOffset);
 
-        collider_left = gameObject.AddComponent<BoxCollider2D>();
-        collider_left.size = new Vector2(0.05f, colliderLength);
-        collider_left.offset = new Vector2(-boxOffset, 0f);
+        //collider_left = gameObject.AddComponent<BoxCollider2D>();
+        //collider_left.size = new Vector2(0.05f, colliderLength);
+        //collider_left.offset = new Vector2(-boxOffset, 0f);
 
-        collider_top = gameObject.AddComponent<BoxCollider2D>();
-        collider_top.size = new Vector2(colliderLength, 0.05f);
-        collider_top.offset = new Vector2(0f, boxOffset);
+        //collider_top = gameObject.AddComponent<BoxCollider2D>();
+        //collider_top.size = new Vector2(colliderLength, 0.05f);
+        //collider_top.offset = new Vector2(0f, boxOffset);
     }
 
     private void Update()
@@ -54,33 +54,33 @@ public class MovementController : MonoBehaviour
         {
             if(movementTimer <= 0f)
             {
-                //First check on top of the player
-                Physics2D.OverlapCollider(collider_top, contactFilter, wallsHit);
-                if(wallsHit.Count != 0 && Input.GetAxisRaw("Vertical") > 0)
-                {
-                    movement_y = transform.position.y;
-                }
+                ////First check on top of the player
+                //Physics2D.OverlapCollider(collider_top, contactFilter, wallsHit);
+                //if(wallsHit.Count != 0 && Input.GetAxisRaw("Vertical") > 0)
+                //{
+                //    movement_y = transform.position.y;
+                //}
 
-                //Second check to the right of the player
-                Physics2D.OverlapCollider(collider_right, contactFilter, wallsHit);
-                if(wallsHit.Count != 0 && Input.GetAxisRaw("Horizontal") > 0)
-                {
-                    movement_x = transform.position.x;
-                }
+                ////Second check to the right of the player
+                //Physics2D.OverlapCollider(collider_right, contactFilter, wallsHit);
+                //if(wallsHit.Count != 0 && Input.GetAxisRaw("Horizontal") > 0)
+                //{
+                //    movement_x = transform.position.x;
+                //}
 
-                //Third check to the left of the player
-                Physics2D.OverlapCollider(collider_left, contactFilter, wallsHit);
-                if (wallsHit.Count != 0 && Input.GetAxisRaw("Horizontal") < 0)
-                {
-                    movement_x = transform.position.x;
-                }
+                ////Third check to the left of the player
+                //Physics2D.OverlapCollider(collider_left, contactFilter, wallsHit);
+                //if (wallsHit.Count != 0 && Input.GetAxisRaw("Horizontal") < 0)
+                //{
+                //    movement_x = transform.position.x;
+                //}
 
-                //Forth check underneath the player
-                Physics2D.OverlapCollider(collider_down, contactFilter, wallsHit);
-                if (wallsHit.Count != 0 && Input.GetAxisRaw("Vertical") < 0)
-                {
-                    movement_y = transform.position.y;
-                }
+                ////Forth check underneath the player
+                //Physics2D.OverlapCollider(collider_down, contactFilter, wallsHit);
+                //if (wallsHit.Count != 0 && Input.GetAxisRaw("Vertical") < 0)
+                //{
+                //    movement_y = transform.position.y;
+                //}
 
                 if(Input.GetAxisRaw("Horizontal") != 0)
                 {
@@ -90,6 +90,17 @@ public class MovementController : MonoBehaviour
                 transform.position = new Vector3(movement_x, movement_y, 0);
                 movementTimer = delayBetweenMovement;
             }
+        }
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D c)
+    {
+        Debug.Log("Collision trigger with " + c.gameObject.name);
+        Door d;
+        if (c.gameObject.TryGetComponent<Door>(out d))
+        {
+            d.GoNextRoom();
         }
     }
 }

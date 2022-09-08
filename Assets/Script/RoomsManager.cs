@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Collections;using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomsManager : MonoBehaviour
@@ -10,7 +9,7 @@ public class RoomsManager : MonoBehaviour
     public List<RoomsArray> RoomsInstance;
     GameObject currentRoom;
 
-    TestPlayer Player;
+    GameObject Player;
 
     protected virtual void Awake()
     {
@@ -20,7 +19,7 @@ public class RoomsManager : MonoBehaviour
         }
         else Destroy(gameObject);
 
-        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<TestPlayer>();
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void StartGame()
