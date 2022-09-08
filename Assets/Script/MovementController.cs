@@ -8,14 +8,17 @@ using UnityEngine.InputSystem;
 
 public class MovementController : MonoBehaviour
 {
+    public PlayerInputAction playerControls;
+
     [SerializeField] private float delayBetweenMovement;
     [SerializeField] private float boxOffset;
-    private float colliderLength = 0.976f;
-    private readonly float pixelDisplacement_x = 0.05f;
-    private readonly float pixelDisplacement_y = 0.05f;
+    [SerializeField] private float colliderLength = 0.976f;
+    [SerializeField] private float pixelDisplacement_x = 0.05f;
+    [SerializeField] private float pixelDisplacement_y = 0.05f;
+    [SerializeField] private float helmetTimer;
+    
     private float movementTimer = 0f;
 
-    [SerializeField] private float helmetTimer;
     private float helmetTimerIntern;
     private bool isHelmetOnHead;
 
@@ -25,8 +28,6 @@ public class MovementController : MonoBehaviour
     private BoxCollider2D collider_down;
 
     private ContactFilter2D contactFilter;
-
-    private PlayerInput playerInput;
 
     private void Awake()
     {
@@ -45,58 +46,67 @@ public class MovementController : MonoBehaviour
         collider_top = gameObject.AddComponent<BoxCollider2D>();
         collider_top.size = new Vector2(colliderLength, 0.05f);
         collider_top.offset = new Vector2(0f, boxOffset);
+
+        playerControls = new PlayerInputAction();
+        playerControls.Player.Enable();
     }
 
-    private void Start()
+
+    private void OnDisable()
     {
-        playerInput = GetComponent<PlayerInput>();
+        playerControls.Disable();
     }
 
     private void Update()
     {
+        //Timer handling
         movementTimer -= movementTimer <= 0 ? 0 : Time.deltaTime;
         if (isHelmetOnHead)
             helmetTimerIntern -= Time.deltaTime;
 
+        //Filtering setup for colliders
         List<Collider2D> wallsHit = new ();
         contactFilter.SetLayerMask(LayerMask.GetMask("Wall"));
         contactFilter.useLayerMask = true;
-        float movement_x = transform.position.x + Input.GetAxisRaw("Horizontal") * pixelDisplacement_x;
-        float movement_y = transform.position.y + Input.GetAxisRaw("Vertical") * pixelDisplacement_y;
 
-        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        Vector2 input = playerControls.Player.Move.ReadValue<Vector2>();
+        float movement_x = transform.position.x + input.x * pixelDisplacement_x;
+        float movement_y = transform.position.y + input.y * pixelDisplacement_y;
+
+        if (input != Vector2.zero)
         {
             if(movementTimer <= 0f)
             {
                 //First check on top of the player
                 Physics2D.OverlapCollider(collider_top, contactFilter, wallsHit);
-                if(wallsHit.Count != 0 && Input.GetAxisRaw("Vertical") > 0)
+                if(wallsHit.Count != 0 && input.y > 0)
                 {
                     movement_y = transform.position.y;
                 }
 
                 //Second check to the right of the player
                 Physics2D.OverlapCollider(collider_right, contactFilter, wallsHit);
-                if(wallsHit.Count != 0 && Input.GetAxisRaw("Horizontal") > 0)
+                if(wallsHit.Count != 0 && input.x > 0)
                 {
                     movement_x = transform.position.x;
                 }
 
                 //Third check to the left of the player
                 Physics2D.OverlapCollider(collider_left, contactFilter, wallsHit);
-                if (wallsHit.Count != 0 && Input.GetAxisRaw("Horizontal") < 0)
+                if (wallsHit.Count != 0 && input.x < 0)
                 {
                     movement_x = transform.position.x;
                 }
 
                 //Forth check underneath the player
                 Physics2D.OverlapCollider(collider_down, contactFilter, wallsHit);
-                if (wallsHit.Count != 0 && Input.GetAxisRaw("Vertical") < 0)
+                if (wallsHit.Count != 0 && input.y < 0)
                 {
                     movement_y = transform.position.y;
                 }
 
-                if(Input.GetAxisRaw("Horizontal") != 0)
+                //Diagonal cancel
+                if(input.x != 0)
                 {
                     movement_y = transform.position.y;
                 }
@@ -111,7 +121,7 @@ public class MovementController : MonoBehaviour
     {
         if (isHelmetOnHead)
         {
-
+            
         }
         else
         {

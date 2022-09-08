@@ -542,6 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayBetweenMovement: 0.005
   boxOffset: 0.535
+  helmetTimer: 0
 --- !u!1 &1459108791
 GameObject:
   m_ObjectHideFlags: 0
