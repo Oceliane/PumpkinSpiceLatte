@@ -2095,7 +2095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8337129792069934744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.106, z: 0}
+  m_LocalPosition: {x: 0, y: -0.75000006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2292,7 +2292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8337129792981939650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.125, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2459,6 +2459,10 @@ PrefabInstance:
     - target: {fileID: 6140799812803379117, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
       propertyPath: loops
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140799812803379117, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
+      propertyPath: delayBetweenMovements
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 6140799812803379117, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
       propertyPath: patrolPositions.Array.size
@@ -2718,6 +2722,18 @@ PrefabInstance:
     - target: {fileID: 6140799812803379117, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
       propertyPath: loops
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140799812803379117, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
+      propertyPath: startingPos
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140799812803379117, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
+      propertyPath: randomStartingPos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140799812803379117, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
+      propertyPath: delayBetweenMovements
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 6140799812803379117, guid: 61a487b8445a40b4c958e92b799c8570, type: 3}
       propertyPath: patrolPositions.Array.size
