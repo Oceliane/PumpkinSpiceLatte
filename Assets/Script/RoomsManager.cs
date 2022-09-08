@@ -22,8 +22,13 @@ public class RoomsManager : MonoBehaviour
 
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<TestPlayer>();
     }
-    private void Start()
-    {   
+
+    public void StartGame()
+    {
+        if(RoomsPrefab.Length <= 0)
+        {
+            return;
+        }
         RoomsInstance = new List<RoomsArray>();
         for (int i = 0; i < RoomsPrefab.Length; ++i)
         {
@@ -43,6 +48,7 @@ public class RoomsManager : MonoBehaviour
         RoomsInstance[0].RoomsRow[0].SetActive(true);
         currentRoom = RoomsInstance[0].RoomsRow[0];
     }
+
     public void GoToNextRoom(Door.Direction dir)
     {
         Vector2 tempCoords = currentRoom.GetComponent<Room>().Coords;
