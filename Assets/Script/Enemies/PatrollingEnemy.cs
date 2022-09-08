@@ -79,7 +79,7 @@ public class PatrollingEnemy : MonoBehaviour
                 detectionAreas[1].SetActive(false);
                 detectionAreas[2].SetActive(false);
             }
-            else if (hit.distance < 2.2)
+            else if (hit.distance < 2)
             {
                 detectionAreas[0].SetActive(true);
                 detectionAreas[1].SetActive(true);

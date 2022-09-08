@@ -9,7 +9,7 @@ public class MovementController : MonoBehaviour
 {
     [SerializeField] private float delayBetweenMovement;
     [SerializeField] private float boxOffset;
-    private float colliderLength = 0.976f;
+    private float colliderLength = 0.65f;  // 0.976 0.535
     private readonly float pixelDisplacement_x = 0.05f;
     private readonly float pixelDisplacement_y = 0.05f;
     private float movementTimer = 0f;

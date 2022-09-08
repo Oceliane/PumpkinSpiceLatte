@@ -49,8 +49,6 @@ public class RotatingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EnemyDetection();
-
         if (delay > 0)
         {
             delay -= Time.deltaTime;
@@ -100,6 +98,8 @@ public class RotatingEnemy : MonoBehaviour
 
             delay = delayBetweenRotations;
         }
+
+        EnemyDetection();
     }
 
     void EnemyDetection()
