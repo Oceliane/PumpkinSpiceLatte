@@ -5,7 +5,6 @@ using UnityEngine;
 public class PatrollingEnemy : MonoBehaviour
 {
     [SerializeField] Transform[] patrolPositions;
-    [SerializeField] int[] rotations;
     [SerializeField] GameObject[] detectionAreas;
     [SerializeField] GameObject objectToRotate;
     [SerializeField] Color lineColor;
@@ -58,9 +57,6 @@ public class PatrollingEnemy : MonoBehaviour
                 transform.position = patrolPositions[targetPos].position;
                 currentPos = targetPos;
 
-                //if (currentPos >= patrolPositions.Length)
-                //    currentPos = 0;
-
                 UpdateDirection();
             }
             
@@ -70,20 +66,20 @@ public class PatrollingEnemy : MonoBehaviour
 
     void EnemyDetection()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.right), 2.4f, ~layerMask);
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * 2.4f, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, objectToRotate.transform.TransformDirection(Vector2.right), 2.4f, ~layerMask);
+        //Debug.DrawRay(transform.position, objectToRotate.transform.TransformDirection(Vector3.right) * 2.4f, Color.red);
 
 
         if (hit)
         {
-            Debug.Log(hit.collider.name);
-            if (hit.distance < 0.8)
+            //Debug.Log(hit.collider.name);
+            if (hit.distance < 1.2)
             {
                 detectionAreas[0].SetActive(true);
                 detectionAreas[1].SetActive(false);
                 detectionAreas[2].SetActive(false);
             }
-            else if (hit.distance < 1.6)
+            else if (hit.distance < 2.2)
             {
                 detectionAreas[0].SetActive(true);
                 detectionAreas[1].SetActive(true);
@@ -96,7 +92,7 @@ public class PatrollingEnemy : MonoBehaviour
                 detectionAreas[2].SetActive(true);
             }
         }
-        else
+        else if (!detectionAreas[2].activeInHierarchy)
         {
             detectionAreas[0].SetActive(true);
             detectionAreas[1].SetActive(true);
@@ -112,8 +108,6 @@ public class PatrollingEnemy : MonoBehaviour
                 targetPos = 0;
             else
                 targetPos = currentPos + 1;
-
-            objectToRotate.transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
         }   
         else
         {
@@ -123,12 +117,10 @@ public class PatrollingEnemy : MonoBehaviour
                 {
                     targetPos = currentPos + 1;
                     goBackwards = !goBackwards;
-                    objectToRotate.transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
                 }
                 else
                 {
                     targetPos = currentPos - 1;
-                    objectToRotate.transform.eulerAngles = new Vector3(0, 0, rotations[currentPos] + 180);
                 }
             }
             else
@@ -137,12 +129,10 @@ public class PatrollingEnemy : MonoBehaviour
                 {
                     targetPos = currentPos - 1;
                     goBackwards = !goBackwards;
-                    objectToRotate.transform.eulerAngles = new Vector3(0, 0, rotations[currentPos] + 180);
                 }
                 else
                 {
                     targetPos = currentPos + 1;
-                    objectToRotate.transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
                 }
             }
         }
@@ -153,9 +143,28 @@ public class PatrollingEnemy : MonoBehaviour
         nbrMovement = distance / 0.05f;
         moveDir = targetDirection.normalized;
 
-        //transform.rotation = Quaternion.LookRotation(moveDir);
-        //objectToRotate.transform.eulerAngles = new Vector3(0, 0, rotations[targetPos]);
-        //transform.LookAt(patrolPositions[targetPos], Vector3.forward);
+        if (moveDir.x < 0)
+        {
+            objectToRotate.transform.eulerAngles = new Vector3(0, 0, 180);
+        }
+        else if (moveDir.x > 0)
+        {
+            objectToRotate.transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (moveDir.y < 0)
+        {
+            objectToRotate.transform.eulerAngles = new Vector3(0, 0, -90);
+        }
+        else if (moveDir.y > 0)
+        {
+            objectToRotate.transform.eulerAngles = new Vector3(0, 0, 90);
+        }
+
+
+        foreach (var item in detectionAreas)
+        {
+            item.transform.localEulerAngles = objectToRotate.transform.eulerAngles;
+        }
     }
 
     private void OnDrawGizmos()

@@ -5,16 +5,45 @@ using UnityEngine;
 public class RotatingEnemy : MonoBehaviour
 {
     [SerializeField] GameObject[] detectionAreas;
+    [SerializeField] Animator gargouilleAnim;
+    [SerializeField] Sprite[] gargouilleSprites;
     [SerializeField] LayerMask layerMask;
 
     [Header("Settings")]
     [SerializeField] bool rotationAntiHoraire;
     [SerializeField] float delayBetweenRotations;
     float delay;
+    [SerializeField] float state;
 
     private void Start()
     {
         delay = delayBetweenRotations;
+
+        if (state == 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            gargouilleAnim.SetTrigger("Right");
+        }
+        else if (state == 1)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 90);
+            gargouilleAnim.SetTrigger("Up");
+        }
+        else if (state == 2)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 180);
+            gargouilleAnim.SetTrigger("Left");
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, 270);
+            gargouilleAnim.SetTrigger("Down");
+        }
+
+        foreach (var item in detectionAreas)
+        {
+            item.transform.localEulerAngles = transform.eulerAngles;
+        }
     }
 
     // Update is called once per frame
@@ -28,13 +57,46 @@ public class RotatingEnemy : MonoBehaviour
         }
         else
         {
-            if (transform.eulerAngles.z >= 360 || transform.eulerAngles.z <= -360)
-                transform.eulerAngles = Vector3.zero;
-
             if (rotationAntiHoraire)
-                transform.eulerAngles += new Vector3(0, 0, 90);
+            {
+                state++;
+
+                if (state >= gargouilleSprites.Length)
+                    state = 0;
+            }
             else
-                transform.eulerAngles -= new Vector3(0, 0, 90);
+            {
+                state--; 
+
+                if (state < 0)
+                    state = gargouilleSprites.Length;
+            }
+
+            if (state == 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                gargouilleAnim.SetTrigger("Right");
+            }
+            else if (state == 1)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 90);
+                gargouilleAnim.SetTrigger("Up");
+            }
+            else if (state == 2)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 180);
+                gargouilleAnim.SetTrigger("Left");
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 270);
+                gargouilleAnim.SetTrigger("Down");
+            }
+
+            foreach (var item in detectionAreas)
+            {
+                item.transform.localEulerAngles = transform.eulerAngles;
+            }
 
             delay = delayBetweenRotations;
         }
@@ -68,7 +130,7 @@ public class RotatingEnemy : MonoBehaviour
                 detectionAreas[2].SetActive(true);
             }
         }
-        else
+        else if (!detectionAreas[2].activeInHierarchy)
         {
             detectionAreas[0].SetActive(true);
             detectionAreas[1].SetActive(true);
