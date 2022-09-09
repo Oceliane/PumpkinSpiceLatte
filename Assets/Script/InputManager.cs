@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour
         if (actionToRebind == null || bindingIndex < 0)
             return;
 
-        statusText.text = $"Press a {actionToRebind.expectedControlType}";
+        statusText.text = $"...";
 
         actionToRebind.Disable();
 
