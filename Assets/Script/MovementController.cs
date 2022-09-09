@@ -13,7 +13,7 @@ public class MovementController : MonoBehaviour
     [Header("Movement settings")]
     [SerializeField] private float pixelDisplacement_x = 0.05f;
     [SerializeField] private float pixelDisplacement_y = 0.05f;
-    [SerializeField] private float delayBetweenMovement;
+    public float delayBetweenMovement;
 
     [Header("Helmet settings")]
     [SerializeField] private float helmetTimer;

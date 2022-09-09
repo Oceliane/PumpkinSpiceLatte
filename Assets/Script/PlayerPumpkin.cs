@@ -9,6 +9,8 @@ public class PlayerPumpkin : MonoBehaviour
     [SerializeField] MovementController refMouvementController;
     [SerializeField] RoomsManager refRoomsManager;
     [SerializeField] bool isHidden;
+    [SerializeField] float delayWhenMasked;
+    [SerializeField] float delayWhenNotMasked;
     private PlayerInputAction playerControls;
 
     [SerializeField] GameObject seedPrefab;
@@ -29,6 +31,7 @@ public class PlayerPumpkin : MonoBehaviour
             isHidden = false;
             playerAnimator.SetTrigger("MaskOff");
             playerAnimator.SetBool("HasMaskOn", false);
+            refMouvementController.delayBetweenMovement = delayWhenNotMasked;
 
             refRoomsManager.PlayerStatusChanged(isHidden);
         }
@@ -37,6 +40,7 @@ public class PlayerPumpkin : MonoBehaviour
             isHidden = true;
             playerAnimator.SetTrigger("MaskOn");
             playerAnimator.SetBool("HasMaskOn", true);
+            refMouvementController.delayBetweenMovement = delayWhenMasked;
 
             refRoomsManager.PlayerStatusChanged(isHidden);
         }
