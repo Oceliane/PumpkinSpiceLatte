@@ -22,7 +22,13 @@ public class StandingEnemy : MonoBehaviour
         if (hit)
         {
             //Debug.Log(hit.collider.name);
-            if (hit.distance < 1.2)
+            if (hit.distance < 0.7)
+            {
+                detectionAreas[0].SetActive(false);
+                detectionAreas[1].SetActive(false);
+                detectionAreas[2].SetActive(false);
+            }
+            else if (hit.distance < 1.2)
             {
                 detectionAreas[0].SetActive(true);
                 detectionAreas[1].SetActive(false);

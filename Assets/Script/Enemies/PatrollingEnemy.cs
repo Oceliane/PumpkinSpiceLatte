@@ -73,7 +73,13 @@ public class PatrollingEnemy : Enemy
         if (hit && !playerIsHidden)
         {
             //Debug.Log(hit.collider.name);
-            if (hit.distance < 1.2)
+            if (hit.distance < 0.4)
+            {
+                detectionAreas[0].SetActive(false);
+                detectionAreas[1].SetActive(false);
+                detectionAreas[2].SetActive(false);
+            }
+            else if (hit.distance < 1.2)
             {
                 detectionAreas[0].SetActive(true);
                 detectionAreas[1].SetActive(false);

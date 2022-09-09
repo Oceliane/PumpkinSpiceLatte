@@ -110,8 +110,14 @@ public class RotatingEnemy : Enemy
 
         if (hit && !playerIsHidden)
         {
-            Debug.Log(hit.collider.name);
-            if (hit.distance < 0.8)
+            //Debug.Log(hit.collider.name);
+            if (hit.distance < 0.4)
+            {
+                detectionAreas[0].SetActive(false);
+                detectionAreas[1].SetActive(false);
+                detectionAreas[2].SetActive(false);
+            }
+            else if (hit.distance < 0.8)
             {
                 detectionAreas[0].SetActive(true);
                 detectionAreas[1].SetActive(false);
