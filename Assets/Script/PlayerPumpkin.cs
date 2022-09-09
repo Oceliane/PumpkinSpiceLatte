@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerPumpkin : MonoBehaviour
 {
@@ -8,36 +9,42 @@ public class PlayerPumpkin : MonoBehaviour
     [SerializeField] MovementController refMouvementController;
     [SerializeField] RoomsManager refRoomsManager;
     [SerializeField] bool isHidden;
+    private PlayerInputAction playerControls;
 
     [SerializeField] GameObject seedPrefab;
     GameObject projectile;
 
-    void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        playerControls = InputManager.inputActions;
+        playerControls.Player.Enable();
+        playerControls.Player.Helmet.started += Anim_Pumpkin;
+        playerControls.Player.Fire.started += Fire_Seed;
+    }
+
+    private void Anim_Pumpkin(InputAction.CallbackContext context)
+    {
+        if (isHidden)
         {
-            if (isHidden)
-            {
-                isHidden = false;
-                playerAnimator.SetTrigger("MaskOff");
-                playerAnimator.SetBool("HasMaskOn", false);
+            isHidden = false;
+            playerAnimator.SetTrigger("MaskOff");
+            playerAnimator.SetBool("HasMaskOn", false);
 
-                refRoomsManager.PlayerStatusChanged(isHidden);
-            }
-            else
-            {
-                isHidden = true;
-                playerAnimator.SetTrigger("MaskOn");
-                playerAnimator.SetBool("HasMaskOn", true);
-
-                refRoomsManager.PlayerStatusChanged(isHidden);
-            }
+            refRoomsManager.PlayerStatusChanged(isHidden);
         }
-
-        if (Input.GetKeyDown(KeyCode.R) && projectile == null)
+        else
         {
-            projectile = Instantiate(seedPrefab, transform.position, Quaternion.identity);
-            projectile.GetComponent<Seed>().moveDir = refMouvementController.lastDir;
+            isHidden = true;
+            playerAnimator.SetTrigger("MaskOn");
+            playerAnimator.SetBool("HasMaskOn", true);
+
+            refRoomsManager.PlayerStatusChanged(isHidden);
         }
+    }
+
+    private void Fire_Seed(InputAction.CallbackContext context)
+    {
+        projectile = Instantiate(seedPrefab, transform.position, Quaternion.identity);
+        projectile.GetComponent<Seed>().moveDir = refMouvementController.lastDir;
     }
 }
