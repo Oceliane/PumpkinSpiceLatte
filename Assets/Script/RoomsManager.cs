@@ -11,6 +11,8 @@ public class RoomsManager : MonoBehaviour
 
     [SerializeField]
     GameObject Player;
+    bool playerHidden;
+
 
     [SerializeField]
     GameObject VictoryScreen;
@@ -62,6 +64,7 @@ public class RoomsManager : MonoBehaviour
                     currentRoom = RoomsInstance[(int)tempCoords.x - 1].RoomsRow[(int)tempCoords.y];
                     currentRoom.SetActive(true);
                     Player.transform.position = currentRoom.GetComponent<Room>().SpawnUp.position;
+                    PlayerStatusChanged(playerHidden);
                 }
                 break;
             case Door.Direction.DOWN:
@@ -71,6 +74,7 @@ public class RoomsManager : MonoBehaviour
                     currentRoom = RoomsInstance[(int)tempCoords.x + 1].RoomsRow[(int)tempCoords.y];
                     currentRoom.SetActive(true);
                     Player.transform.position = currentRoom.GetComponent<Room>().SpawnDown.position;
+                    PlayerStatusChanged(playerHidden);
                 }
                 break;
             case Door.Direction.LEFT:
@@ -80,6 +84,7 @@ public class RoomsManager : MonoBehaviour
                     currentRoom = RoomsInstance[(int)tempCoords.x].RoomsRow[(int)tempCoords.y - 1];
                     currentRoom.SetActive(true);
                     Player.transform.position = currentRoom.GetComponent<Room>().SpawnLeft.position;
+                    PlayerStatusChanged(playerHidden);
                 }
                 break;
             case Door.Direction.RIGHT:
@@ -89,7 +94,7 @@ public class RoomsManager : MonoBehaviour
                     currentRoom = RoomsInstance[(int)tempCoords.x].RoomsRow[(int)tempCoords.y + 1];
                     currentRoom.SetActive(true);
                     Player.transform.position = currentRoom.GetComponent<Room>().SpawnRight.position;
-
+                    PlayerStatusChanged(playerHidden);
                 }
                 break;
             case Door.Direction.VICTORY:
@@ -97,6 +102,7 @@ public class RoomsManager : MonoBehaviour
                 break;
         }
         Room r = currentRoom.GetComponent<Room>();
+
         tempCoords = currentRoom.GetComponent<Room>().Coords;
         if (r.bIsReset)
         {
@@ -109,6 +115,7 @@ public class RoomsManager : MonoBehaviour
     public void PlayerStatusChanged(bool playerIsHidden)
     {
         currentRoom.GetComponent<Room>().RoomEnemyChange(playerIsHidden);
+        playerHidden = playerIsHidden;
     }
 }
 
