@@ -392,7 +392,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
-  delayBetweenMovements: 0.05
+  delayBetweenMovements: 0.03
   loops: 1
   randomStartingPos: 0
   startingPos: 0
@@ -4028,7 +4028,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
-  delayBetweenMovements: 0.05
+  delayBetweenMovements: 0.01
   loops: 1
   randomStartingPos: 1
   startingPos: 0
