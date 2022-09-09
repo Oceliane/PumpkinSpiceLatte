@@ -40,7 +40,6 @@ public class RebindingScript : MonoBehaviour
 
         if (inputActionReference != null)
         {
-            InputManager.LoadBindingOverride(actionName);
             GetBindingInfo();
             UpdateUI();
         }

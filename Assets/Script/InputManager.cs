@@ -62,7 +62,6 @@ public class InputManager : MonoBehaviour
                     DoRebind(actionToRebind, nextBindingIndex, statusText, allCompositeParts, excludeMouse);
             }
 
-            SaveBindingOverride(actionToRebind);
             rebindComplete?.Invoke();
         });
 
@@ -92,27 +91,6 @@ public class InputManager : MonoBehaviour
         return action.GetBindingDisplayString(bindingIndex);
     }
 
-    private static void SaveBindingOverride(InputAction action)
-    {
-        for (int i = 0; i < action.bindings.Count; i++)
-        {
-            PlayerPrefs.SetString(action.actionMap + action.name + i, action.bindings[i].overridePath);
-        }
-    }
-
-    public static void LoadBindingOverride(string actionName)
-    {
-        if (inputActions == null)
-            inputActions = new PlayerInputAction();
-
-        InputAction action = inputActions.asset.FindAction(actionName);
-
-        for (int i = 0; i < action.bindings.Count; i++)
-        {
-            if (!string.IsNullOrEmpty(PlayerPrefs.GetString(action.actionMap + action.name + i)))
-                action.ApplyBindingOverride(i, PlayerPrefs.GetString(action.actionMap + action.name + i));
-        }
-    }
 
     public static void ResetBinding(string actionName, int bindingIndex)
     {
@@ -132,7 +110,6 @@ public class InputManager : MonoBehaviour
         else
             action.RemoveBindingOverride(bindingIndex);
 
-        SaveBindingOverride(action);
     }
 
 }

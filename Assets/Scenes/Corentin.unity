@@ -574,19 +574,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d43ba2640717234eaa76eac82849ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputActionReference: {fileID: -371897003804810379, guid: e1da3567d679cd441bde017afac270ee, type: 3}
+  inputActionReference: {fileID: -8524200959988416596, guid: e1da3567d679cd441bde017afac270ee, type: 3}
   excludeMouse: 1
-  selectedBinding: 0
+  selectedBinding: 2
   displayStringOptions: 0
   inputBinding:
-    m_Name: 
-    m_Id: 94d3292e-254c-4427-abe4-cc4b375f6bee
-    m_Path: <Keyboard>/space
+    m_Name: up
+    m_Id: e2062cb9-1b15-46a2-838c-2f8d72a0bdd9
+    m_Path: <Keyboard>/w
     m_Interactions: 
     m_Processors: 
-    m_Groups: 
-    m_Action: Helmet
-    m_Flags: 0
+    m_Groups: ;Keyboard&Mouse
+    m_Action: Move
+    m_Flags: 8
   actionText: {fileID: 1468442544}
   rebindButton: {fileID: 475451991}
   rebindText: {fileID: 1294575516}
@@ -772,7 +772,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Space
+  m_text: W
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1218,7 +1218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Helmet
+  m_text: Move
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
