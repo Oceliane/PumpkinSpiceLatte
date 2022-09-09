@@ -10,7 +10,8 @@ public class Dirt : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Instantiate(pumpkin, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        Instantiate(pumpkin, transform);
+        refRend.enabled = false;
+        refCollider.enabled = false;
     }
 }
