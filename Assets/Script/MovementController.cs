@@ -14,6 +14,7 @@ public class MovementController : MonoBehaviour
     private readonly float pixelDisplacement_x = 0.05f;
     private readonly float pixelDisplacement_y = 0.05f;
     private float movementTimer = 0f;
+    public Vector3 lastDir = Vector3.right;
 
     private BoxCollider2D collider_right;
     private BoxCollider2D collider_left;
@@ -80,6 +81,7 @@ public class MovementController : MonoBehaviour
                 //if (wallsHit.Count != 0 && Input.GetAxisRaw("Vertical") < 0)
                 //{
                 //    movement_y = transform.position.y;
+                //
                 //}
 
                 if(Input.GetAxisRaw("Horizontal") != 0)
@@ -89,7 +91,14 @@ public class MovementController : MonoBehaviour
 
                 transform.position = new Vector3(movement_x, movement_y, 0);
                 movementTimer = delayBetweenMovement;
+
+                lastDir = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
+                playerAnimator.SetBool("IsWalking", true);
             }
+        }
+        else
+        {
+            playerAnimator.SetBool("IsWalking", false);
         }
     }
 

@@ -219,7 +219,7 @@ MonoBehaviour:
   - {fileID: 2046914242, guid: 953f1a1c8d753d8439ad67afd978ed75, type: 3}
   layerMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 640
   rotationAntiHoraire: 1
   delayBetweenRotations: 1.5
   state: 0
