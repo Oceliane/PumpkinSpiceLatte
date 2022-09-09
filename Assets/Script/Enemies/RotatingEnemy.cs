@@ -142,10 +142,8 @@ public class RotatingEnemy : Enemy
     {
         playerIsHidden = true;
 
-        foreach (var item in detectionAreas)
-        {
-            item.SetActive(false);
-        }
+        detectionAreas[1].SetActive(false);
+        detectionAreas[2].SetActive(false);
     }
 
     public override void EnemyCanSee()
