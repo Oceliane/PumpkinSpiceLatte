@@ -9,6 +9,9 @@ public class PlayerPumpkin : MonoBehaviour
     [SerializeField] RoomsManager refRoomsManager;
     [SerializeField] bool isHidden;
 
+    [SerializeField] GameObject seedPrefab;
+    GameObject projectile;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -31,9 +34,10 @@ public class PlayerPumpkin : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && projectile == null)
         {
-            //refMouvementController.lastDir
+            projectile = Instantiate(seedPrefab, transform);
+            projectile.GetComponent<Seed>().moveDir = refMouvementController.lastDir;
         }
     }
 }
