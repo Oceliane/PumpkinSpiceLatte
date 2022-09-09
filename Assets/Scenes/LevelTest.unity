@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2412504388574314160, guid: 5f6c70bbdaa639c4d94b32492d341f49, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f6c70bbdaa639c4d94b32492d341f49, type: 3}
 --- !u!1 &425727956
@@ -546,6 +550,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 645443231, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7854459819538146474, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -596,50 +604,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
---- !u!1 &1357135395 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7854459819538146484, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
-  m_PrefabInstance: {fileID: 1357135394}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1357135396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357135395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0104a433071a76a48be26a294da13038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RoomsPrefab:
-  - RoomsRow:
-    - {fileID: 3247933953042237820, guid: 956dcbc2a0654e14abc6bfdc055ad433, type: 3}
-    - {fileID: 4710825362218677399, guid: f8287c688a44b584ba4ea394d9a8f6dc, type: 3}
-    - {fileID: 7166284647203279818, guid: 9eca01c4e83edd24e83fcac79dbe0942, type: 3}
-    - {fileID: 8918024364523851160, guid: 081a5e7cdfa7a044ab4e596cc9776f16, type: 3}
-  - RoomsRow:
-    - {fileID: 550004992064835492, guid: 13600de220264684381d11453c9b0f32, type: 3}
-    - {fileID: 550004992064835492, guid: 13600de220264684381d11453c9b0f32, type: 3}
-    - {fileID: 685961955027689615, guid: 2d653a85dc62bff4e97017c264f76dd2, type: 3}
-    - {fileID: 184512852305881001, guid: 2dc3ac8be6136e44b89d90f9702b1dde, type: 3}
-    - {fileID: 7845883970067644951, guid: b8d60f3b682fa3644babb573576b1839, type: 3}
-  - RoomsRow:
-    - {fileID: 550004992064835492, guid: 13600de220264684381d11453c9b0f32, type: 3}
-    - {fileID: 550004992064835492, guid: 13600de220264684381d11453c9b0f32, type: 3}
-    - {fileID: 1175988573852871666, guid: 452d9fb4715261c4d93e431caf93d22c, type: 3}
-    - {fileID: 1173476652801557454, guid: 1a0c51644bed150448bc476f18c1a3db, type: 3}
-    - {fileID: 9098917551046626711, guid: 394dc3ef56a2e26488447562e6effe48, type: 3}
-    - {fileID: 2275742702051582369, guid: 905ce1abce3c683409bafb10425e8bb9, type: 3}
-  - RoomsRow:
-    - {fileID: 550004992064835492, guid: 13600de220264684381d11453c9b0f32, type: 3}
-    - {fileID: 550004992064835492, guid: 13600de220264684381d11453c9b0f32, type: 3}
-    - {fileID: 550004992064835492, guid: 13600de220264684381d11453c9b0f32, type: 3}
-    - {fileID: 3695320533332520465, guid: afc85bb5078e3f044b5f12a0a4098d81, type: 3}
-    - {fileID: 1857207160979659554, guid: c242daf4476094947aa5e00c86f7198c, type: 3}
-    - {fileID: 6100747442477022401, guid: af92aaa40801d504cbe08636d3935572, type: 3}
-  RoomsInstance: []
 --- !u!1001 &1793370396
 PrefabInstance:
   m_ObjectHideFlags: 0

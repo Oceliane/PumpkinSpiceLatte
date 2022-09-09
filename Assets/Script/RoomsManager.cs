@@ -11,6 +11,9 @@ public class RoomsManager : MonoBehaviour
 
     GameObject Player;
 
+    [SerializeField]
+    GameObject VictoryScreen;
+
     protected virtual void Awake()
     {
         if (instance == null)
@@ -63,7 +66,7 @@ public class RoomsManager : MonoBehaviour
                 }
                 break;
             case Door.Direction.DOWN:
-                if (tempCoords.x + 1 <= RoomsInstance[(int)tempCoords.x].RoomsRow.Length)
+                if (tempCoords.x + 1 < RoomsInstance[(int)tempCoords.x].RoomsRow.Length)
                 {
                     currentRoom.SetActive(false);
                     currentRoom = RoomsInstance[(int)tempCoords.x + 1].RoomsRow[(int)tempCoords.y];
@@ -81,7 +84,7 @@ public class RoomsManager : MonoBehaviour
                 }
                 break;
             case Door.Direction.RIGHT:
-                if(tempCoords.y + 1 <= RoomsInstance.Count)
+                if(tempCoords.y + 1 < RoomsInstance.Count)
                 {
                     currentRoom.SetActive(false);
                     currentRoom = RoomsInstance[(int)tempCoords.x].RoomsRow[(int)tempCoords.y + 1];
@@ -89,6 +92,9 @@ public class RoomsManager : MonoBehaviour
                     Player.transform.position = currentRoom.GetComponent<Room>().SpawnRight.position;
 
                 }
+                break;
+            case Door.Direction.VICTORY:
+                VictoryScreen.SetActive(true);
                 break;
         }
         Room r = currentRoom.GetComponent<Room>();

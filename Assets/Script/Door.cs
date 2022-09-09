@@ -11,7 +11,8 @@ public class Door : MonoBehaviour
         UP,
         DOWN,
         LEFT,
-        RIGHT
+        RIGHT,
+        VICTORY
     }
     public Direction DoorDirection;
     public void GoNextRoom()
