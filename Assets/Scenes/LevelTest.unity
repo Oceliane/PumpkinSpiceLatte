@@ -138,6 +138,18 @@ PrefabInstance:
       propertyPath: boxOffset
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2412504388336032825, guid: 5f6c70bbdaa639c4d94b32492d341f49, type: 3}
+      propertyPath: helmetTimer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412504388336032825, guid: 5f6c70bbdaa639c4d94b32492d341f49, type: 3}
+      propertyPath: helmetCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412504388336032825, guid: 5f6c70bbdaa639c4d94b32492d341f49, type: 3}
+      propertyPath: helmetRecoveryRatio
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2412504388336032826, guid: 5f6c70bbdaa639c4d94b32492d341f49, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -562,10 +574,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 645443231, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1357135396, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 515157390}
+    - target: {fileID: 1561157324, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -229
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157325, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157325, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_margin.w
+      value: 637.5889
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157325, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_margin.x
+      value: 670.6685
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157325, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_margin.y
+      value: 187.71976
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157325, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_margin.z
+      value: 669.167
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157325, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1788522242, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0182
@@ -693,6 +737,10 @@ PrefabInstance:
     - target: {fileID: 3348455744300816755, guid: ad79dbfe1f3244f4893bd61285a1324e, type: 3}
       propertyPath: m_Colors.m_SelectedColor.r
       value: 0.7264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 3348455744491906980, guid: ad79dbfe1f3244f4893bd61285a1324e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3348455744491906983, guid: ad79dbfe1f3244f4893bd61285a1324e, type: 3}
       propertyPath: m_LocalScale.x

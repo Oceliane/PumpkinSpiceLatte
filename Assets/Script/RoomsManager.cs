@@ -68,7 +68,7 @@ public class RoomsManager : MonoBehaviour
                 }
                 break;
             case Door.Direction.DOWN:
-                if (tempCoords.x + 1 < RoomsInstance[(int)tempCoords.x].RoomsRow.Length)
+                if (tempCoords.x + 1 <= RoomsInstance[(int)tempCoords.x].RoomsRow.Length)
                 {
                     currentRoom.SetActive(false);
                     currentRoom = RoomsInstance[(int)tempCoords.x + 1].RoomsRow[(int)tempCoords.y];
@@ -88,7 +88,7 @@ public class RoomsManager : MonoBehaviour
                 }
                 break;
             case Door.Direction.RIGHT:
-                if(tempCoords.y + 1 < RoomsInstance.Count)
+                if(tempCoords.y + 1 <= RoomsInstance[(int)tempCoords.x].RoomsRow.Length)
                 {
                     currentRoom.SetActive(false);
                     currentRoom = RoomsInstance[(int)tempCoords.x].RoomsRow[(int)tempCoords.y + 1];
