@@ -15,7 +15,7 @@ public class Menu : MonoBehaviour
     Animator TransitionAnim;
     private void Awake()
     {
-        GetComponentInChildren<Button>().Select();
+        //GetComponentInChildren<Button>().Select();
         Time.timeScale = 0;
     }
     public void GoPlay()
@@ -24,9 +24,6 @@ public class Menu : MonoBehaviour
         Title.SetActive(false);
         TransitionAnim.Play("Transition");
     }
-
-
-
     public void Quit()
     {
         Application.Quit();
@@ -35,5 +32,6 @@ public class Menu : MonoBehaviour
     {
         Options.SetActive(false);
         Main.SetActive(true);
+        Main.GetComponentInChildren<Button>().Select();
     }
 }
