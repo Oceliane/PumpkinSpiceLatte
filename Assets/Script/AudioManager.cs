@@ -13,18 +13,22 @@ public class AudioManager : MonoBehaviour
         isMusic = true;
     }
 
-    public static void PlayMusic()
+    public void ResolveMusic()
     {
-        music.Play();
-    }
-
-    public static void StopMusic() 
-    {
-        music.Stop();
+        if (isMusic)
+            music.Play();
+        else if (music.isPlaying)
+            music.Stop();
+            
     }
 
     public void ToggleMusic(bool toggle)
     {
         isMusic = toggle;
+    }
+
+    public void StopMusic()
+    {
+        music.Stop();
     }
 }
