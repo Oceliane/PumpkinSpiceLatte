@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 645443231}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0182, y: 1.0375, z: 0}
-  m_LocalScale: {x: 4.9929585, y: 4.986054, z: 1}
+  m_LocalScale: {x: 6.051965, y: 6.0435963, z: 1.2121}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1094820095}
@@ -221,8 +221,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -47, y: 61}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -0.5347, y: -37}
+  m_SizeDelta: {x: 1650.3401, y: 1006.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1561157326
 CanvasRenderer:
@@ -252,8 +252,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You managed to escape this deadly night! \n\nMaybe you'll come back next
-    Halloweeeeeeeeeeeeeeeeeeeeeeeen..."
+  m_text: "Congrats!\n\n\nYou managed to escape this deadly night! \n\nMaybe you'll
+    come back next Halloweeeeeeeeeeeeeeeeeeeeeeeen..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4027e04b1bda05149b5751e8521d99c9, type: 2}
   m_sharedMaterial: {fileID: 810382821539341781, guid: 4027e04b1bda05149b5751e8521d99c9, type: 2}
@@ -280,8 +280,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -333,6 +333,7 @@ GameObject:
   - component: {fileID: 7854459819538146474}
   - component: {fileID: 7854459819538146485}
   - component: {fileID: 1357135396}
+  - component: {fileID: 4426250040672772048}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -368,6 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b0434daedebca41a971cfd7fe8e0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathScreen: {fileID: 0}
 --- !u!114 &1357135396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,7 +387,7 @@ MonoBehaviour:
     - {fileID: 3247933953042237820, guid: 956dcbc2a0654e14abc6bfdc055ad433, type: 3}
     - {fileID: 4710825362218677399, guid: f8287c688a44b584ba4ea394d9a8f6dc, type: 3}
     - {fileID: 7166284647203279818, guid: 9eca01c4e83edd24e83fcac79dbe0942, type: 3}
-    - {fileID: 8918024364523851160, guid: 081a5e7cdfa7a044ab4e596cc9776f16, type: 3}
+    - {fileID: 1402409584322170538, guid: 081a5e7cdfa7a044ab4e596cc9776f16, type: 3}
   - RoomsRow:
     - {fileID: 550004992064835492, guid: 13600de220264684381d11453c9b0f32, type: 3}
     - {fileID: 550004992064835492, guid: 13600de220264684381d11453c9b0f32, type: 3}
@@ -409,3 +411,15 @@ MonoBehaviour:
   RoomsInstance: []
   Player: {fileID: 0}
   VictoryScreen: {fileID: 645443231}
+--- !u!114 &4426250040672772048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7854459819538146484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c8906902a8cfbe499900efc1a24bbf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
