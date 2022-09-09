@@ -9,6 +9,7 @@ public class RoomsManager : MonoBehaviour
     public List<RoomsArray> RoomsInstance;
     GameObject currentRoom;
 
+    [SerializeField]
     GameObject Player;
 
     [SerializeField]
@@ -21,8 +22,6 @@ public class RoomsManager : MonoBehaviour
             instance = this;
         }
         else Destroy(gameObject);
-
-        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void StartGame()

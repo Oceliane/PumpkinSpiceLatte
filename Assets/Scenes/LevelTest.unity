@@ -130,9 +130,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2111531141, guid: 5f6c70bbdaa639c4d94b32492d341f49, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2412504388336032825, guid: 5f6c70bbdaa639c4d94b32492d341f49, type: 3}
       propertyPath: boxOffset
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412504388336032826, guid: 5f6c70bbdaa639c4d94b32492d341f49, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2412504388336032827, guid: 5f6c70bbdaa639c4d94b32492d341f49, type: 3}
       propertyPath: m_RootOrder
@@ -265,8 +273,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425727956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.19966981}
-  m_LocalScale: {x: 21.55, y: 21.55, z: 21.55}
+  m_LocalPosition: {x: -0.2029, y: 0.6454, z: -0.19966981}
+  m_LocalScale: {x: 36.11846, y: 22.840845, z: 21.55}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -553,6 +561,55 @@ PrefabInstance:
     - target: {fileID: 645443231, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 645443233, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.051965
+      objectReference: {fileID: 0}
+    - target: {fileID: 645443233, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.0435963
+      objectReference: {fileID: 0}
+    - target: {fileID: 645443233, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2121
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094820098, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357135396, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 515157390}
+    - target: {fileID: 1561157324, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1650.3401
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157324, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1006.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157324, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.5347
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157324, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -37
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157325, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_text
+      value: "Congrats!\n\n\nYou managed to escape this deadly night! \n\nMaybe you'll
+        come back next Halloweeeeeeeeeeeeeeeeeeeeeeeen..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157325, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_fontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561157325, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 7854459819538146474, guid: 655e9fab419ae3141ab49e29f7a9bf02, type: 3}
       propertyPath: m_RootOrder
