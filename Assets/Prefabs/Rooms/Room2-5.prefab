@@ -2245,7 +2245,7 @@ GameObject:
   - component: {fileID: 8337129792346592113}
   - component: {fileID: 8337129792346592118}
   m_Layer: 0
-  m_Name: DoorUp
+  m_Name: DoorVictory
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2358,7 +2358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: {x: 0, y: 0, z: 0}
-  DoorDirection: 0
+  DoorDirection: 4
 --- !u!1 &8337129792981939650
 GameObject:
   m_ObjectHideFlags: 0
