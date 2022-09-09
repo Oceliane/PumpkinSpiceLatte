@@ -36,7 +36,7 @@ public class PlayerPumpkin : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && projectile == null)
         {
-            projectile = Instantiate(seedPrefab, transform);
+            projectile = Instantiate(seedPrefab, transform.position, Quaternion.identity);
             projectile.GetComponent<Seed>().moveDir = refMouvementController.lastDir;
         }
     }
