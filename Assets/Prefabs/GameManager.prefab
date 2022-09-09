@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &645443233
 Transform:
   m_ObjectHideFlags: 0
@@ -407,4 +407,5 @@ MonoBehaviour:
     - {fileID: 1857207160979659554, guid: c242daf4476094947aa5e00c86f7198c, type: 3}
     - {fileID: 6100747442477022401, guid: af92aaa40801d504cbe08636d3935572, type: 3}
   RoomsInstance: []
+  Player: {fileID: 0}
   VictoryScreen: {fileID: 645443231}
